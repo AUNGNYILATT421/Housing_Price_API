@@ -2,8 +2,6 @@
 
 A production-ready ML system that predicts house sale prices using a stacking ensemble trained on the [Kaggle Housing Prices dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) — **Top 16 / 4,000+ participants**.
 
-**Live demo:** [house-price-predictor.streamlit.app](https://house-price-predictor.streamlit.app) ← replace with your actual URL
-
 **Stack:** FastAPI · PostgreSQL · SQLAlchemy · scikit-learn · Docker · Streamlit · GCP Cloud Run
 
 ---
@@ -12,12 +10,12 @@ A production-ready ML system that predicts house sale prices using a stacking en
 
 A stacking ensemble of three base learners with an SGDRegressor meta-model:
 
-| Model | Role |
-|---|---|
+| Model                     | Role         |
+| ------------------------- | ------------ |
 | GradientBoostingRegressor | Base learner |
-| CatBoostRegressor | Base learner |
-| KernelRidge (RBF) | Base learner |
-| SGDRegressor | Meta-model |
+| CatBoostRegressor         | Base learner |
+| KernelRidge (RBF)         | Base learner |
+| SGDRegressor              | Meta-model   |
 
 Eight features are engineered at inference time: `TotalSF`, `TotalQualSF`, `Age`, `TimeSinceRemod`, `InteriorQualityScore`, `TotalBaths`, `HasPorchDeck`, `TotalPorchDeckSF`.
 
@@ -104,7 +102,7 @@ uvicorn app.main:app --reload --port 8080
 Returns model load status.
 
 ```json
-{"status": "ok", "model": "loaded"}
+{ "status": "ok", "model": "loaded" }
 ```
 
 ### `POST /predict`
@@ -145,8 +143,8 @@ Returns recent predictions from the database.
 
 ## Environment Variables
 
-| Variable | Default | Description |
-|---|---|---|
+| Variable       | Default                      | Description                  |
+| -------------- | ---------------------------- | ---------------------------- |
 | `DATABASE_URL` | `sqlite:///./predictions.db` | SQLAlchemy connection string |
 
 Copy `.env.example` to `.env` and set values for local development.
