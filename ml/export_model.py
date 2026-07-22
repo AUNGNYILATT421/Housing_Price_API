@@ -18,7 +18,6 @@ from sklearn.ensemble import GradientBoostingRegressor, StackingRegressor
 from sklearn.linear_model import SGDRegressor
 from sklearn.kernel_ridge import KernelRidge
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-import xgboost as xgb
 from catboost import CatBoostRegressor
 
 from ml.preprocessing import (

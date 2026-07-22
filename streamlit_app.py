@@ -81,7 +81,7 @@ with col3:
     st.markdown("**Year & Location**")
     YearBuilt    = st.number_input("Year built", 1870, 2024, 2000)
     YearRemodAdd = st.number_input("Year remodelled", 1950, 2024, 2000)
-    YrSold       = st.number_input("Year sold", 2006, 2010, 2010)
+    YrSold       = st.number_input("Year sold", 2006, 2030, 2024)
     Neighborhood = st.selectbox("Neighborhood", [
         "NAmes", "CollgCr", "OldTown", "Edwards", "Somerst", "NridgHt",
         "Gilbert", "Sawyer", "NWAmes", "SawyerW", "BrkSide", "Crawfor",
