@@ -1,8 +1,10 @@
 # House Price Prediction API
 
-A production-ready REST API that predicts house sale prices using a stacking ensemble trained on the [Kaggle Housing Prices dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques).
+A production-ready ML system that predicts house sale prices using a stacking ensemble trained on the [Kaggle Housing Prices dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) — **Top 16 / 4,000+ participants**.
 
-**Stack:** FastAPI · PostgreSQL · SQLAlchemy · scikit-learn · Docker · GCP Cloud Run
+**Live demo:** [house-price-predictor.streamlit.app](https://house-price-predictor.streamlit.app) ← replace with your actual URL
+
+**Stack:** FastAPI · PostgreSQL · SQLAlchemy · scikit-learn · Docker · Streamlit · GCP Cloud Run
 
 ---
 
@@ -37,6 +39,7 @@ Eight features are engineered at inference time: `TotalSF`, `TotalQualSF`, `Age`
 │   └── train.csv        # Kaggle training data (not committed)
 ├── notebooks/
 │   └── housing-prices-xgb-cat-krr.ipynb
+├── streamlit_app.py     # Interactive web demo
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt
@@ -147,6 +150,16 @@ Returns recent predictions from the database.
 | `DATABASE_URL` | `sqlite:///./predictions.db` | SQLAlchemy connection string |
 
 Copy `.env.example` to `.env` and set values for local development.
+
+---
+
+## Streamlit Web Demo
+
+An interactive web app lets users adjust house features via sliders and dropdowns and get an instant price prediction — no coding required.
+
+```bash
+streamlit run streamlit_app.py
+```
 
 ---
 
